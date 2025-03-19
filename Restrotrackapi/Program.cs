@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Restrotrackapi.Models;
+using Restrotrackapi.Repos;
 using Restrotrackapi.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,8 +11,12 @@ var connectionString = builder.Configuration.GetConnectionString("dev");
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddIdentity<Staff, Role>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDbContext>();
-   
-  
+builder.Services.AddScoped<IBillRepo,BillRepo>();   
+builder.Services.AddScoped<IMenuRepo,MenuRepo>();
+builder.Services.AddScoped<IInventoryRepo, InventoryRepo>();
+builder.Services.AddScoped<IOrderRepo, OrderRepo>();
+builder.Services.AddScoped<IPaymentRepo, PaymentRepo>();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
