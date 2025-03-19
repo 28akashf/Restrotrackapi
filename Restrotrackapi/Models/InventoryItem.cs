@@ -1,7 +1,10 @@
-﻿namespace Restrotrackapi.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Restrotrackapi.Models
 {
     public class InventoryItem
     {
+        [Key]
         public string Id { get; set; }
         public string Name { get; set; }
         public  Category Category { get; set; }
