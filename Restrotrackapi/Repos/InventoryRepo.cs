@@ -37,10 +37,7 @@ namespace Restrotrackapi.Repos
             return await ctx.InventoryItems.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<InventoryItem> GetInventoryItemByOrderId(string id)
-        {
-            return await ctx.InventoryItems.FirstOrDefaultAsync(x => x.Id == id);
-        }
+      
 
         public async Task<InventoryItem> ModifyInventoryItem(InventoryItem newInventoryItem)
         {

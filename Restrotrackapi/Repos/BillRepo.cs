@@ -39,7 +39,7 @@ namespace Restrotrackapi.Repos
 
         public async Task<Bill> GetBillByOrderId(string id)
         {
-            return await ctx.Bills.FirstOrDefaultAsync(x => x.Id == id);
+            return await ctx.Bills.FirstOrDefaultAsync(x => x.OrderId == id);
         }
 
         public async Task<Bill> ModifyBill(Bill newbill)

@@ -6,7 +6,7 @@ namespace Restrotrackapi.Repos
     {
         Task<List<InventoryItem>> GetAllInventoryItems();
         Task<InventoryItem> GetInventoryItemById(string id);
-        Task<InventoryItem> GetInventoryItemByOrderId(string id);
+      
         Task<InventoryItem> DeleteInventoryItemById(string id);
         Task<InventoryItem> AddNewInventoryItem(InventoryItem newInventoryItem);
         Task<InventoryItem> ModifyInventoryItem(InventoryItem newInventoryItem);
